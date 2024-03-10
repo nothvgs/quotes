@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HVGS Search</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z'/%3E%3C/svg%3E" type="image/svg+xml">
+  <style>
+    ul {
+      list-style-type: none;
+      overflow: hidden;
+    }
+
+    li {
+      float: right;
+    }
+
+    li a {
+      color: #000;
+      display: block;
+      text-align: center;
+      padding: 10px 10px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    li a:hover {
+      text-decoration: underline;
+    }
+
+    .grid {
+      height: 23px;
+      position: relative;
+      bottom: 4px;
+    }
+
+    .signbutton {
+      background-color: #4885ed;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 7px 10px;
+      position: relative;
+      bottom: 7px;
+      font-weight: bold;
+    }
+
+    .logo {
+      margin-top: 200px;
+      margin-bottom: 20px;
+      height: 180px;
+      width: 200px;
+    }
+
+    .bar {
+      margin: 0 auto;
+      width: 575px;
+      border-radius: 30px;
+      border: 1px solid #dcdcdc;
+    }
+
+    .bar:hover {
+      box-shadow: 1px 1px 8px 1px #dcdcdc;
+    }
+
+    .bar:focus-within {
+      box-shadow: 1px 1px 8px 1px #dcdcdc;
+      outline: none;
+    }
+
+    .searchbar {
+      height: 45px;
+      border: none;
+      width: 500px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .voice {
+      height: 20px;
+      position: relative;
+      top: 5px;
+      left: 10px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .button {
+      background-color: #f5f5f5;
+      border: none;
+      color: #707070;
+      font-size: 15px;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .button:hover {
+      border: 1px solid #c8c8c8;
+      padding: 9px 19px;
+      color: #808080;
+    }
+
+    .button:focus {
+      border: 1px solid #4885ed;
+      padding: 9px 19px;
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <div class="logo">
+      <img alt="Google" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Hunter_Valley_Grammar_School_logo.png">
+    </div>
+    <div class="bar">
+      <form id="searchForm" onsubmit="submitForm(event)">
+        <input class="searchbar" type="text" title="Search" id="searchInput">
+      </form>
+    </div>
+  </center>
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      var query = document.getElementById('searchInput').value.trim().toLowerCase().replace(/\s+/g, '');
+      if (query === 'youtube') {
+        window.location.href = 'https://legacy.hvgs.nsw.edu.au/youtubeviewer';
+      } else if (query === 'github' || query === 'code' || query === 'gyathub') {
+        window.location.href = 'https://github.com/HVGS';
+      } else if (query === 'infinitecraft' || query === 'infinitecrafthacks' || query === 'infinitecrafthax' || query === 'infinitecrafthack' || query === 'inficraft' || query === 'infinitecraftcheats' || query === 'infinitecraftcheat') {
+        window.location.href = 'https://inficraft.github.io';
+      } else if (query !== '') {
+        window.location.href = 'https://hvgs.github.io/' + encodeURIComponent(query);
+      }
+    }
+  </script>
+</body>
+</html>
