@@ -8,7 +8,7 @@
   body {
     background-color: #333;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: monospace;
     margin: 0;
     padding: 0;
   }
@@ -20,24 +20,12 @@
     overflow: hidden;
   }
   
-  .frames {
+  .frame {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: moveFrames 10s linear infinite;
-  }
-  
-  @keyframes moveFrames {
-    0% {
-      transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1);
-    }
+    display: none;
   }
   
   .content {
@@ -54,8 +42,7 @@
 </head>
 <body>
   <div class="header">
-    <div class="frames">
-                               .cccc;;cc;';c.           
+    <pre class="frame">
                       .,:dkdc:;;:c:,:d:.          
                      .loc'.,cc::c:::,..;:.        
                    .cl;....;dkdccc::,...c;        
@@ -72,9 +59,9 @@
    .c:'..lkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkd,.oc     
   .lo;,:cdkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkd,.c;     
 ,dx:..;lllllllllllllllllllllllllllllllllc'...     
-cNO;........................................      
-
-
+cNO;........................................    
+    </pre>
+    <pre class="frame">
                 .ckx;'........':c.                
              .,:c:::::oxxocoo::::,',.             
             .odc'..:lkkoolllllo;..;d,             
@@ -92,27 +79,29 @@ cNO;........................................
   .:;'..oXXXXXXXXXXXXXXXXXXXXXXXXXXXXXko;';:.     
 .ldc..:oOXKXXXXXXKXXKXXXXXXXXXXXXXXXXXXXo..oc     
 :0o...:dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo,.:,     
-cNo........................................;'     
-
-            .cc;.  ...  .;c.                      
-         .,,cc:cc:lxxxl:ccc:;,.                   
-        .lo;...lKKklllookl..cO;                   
-      .cl;.,:'.okl;..''.;,..';:.                  
-     .:o;;dkd,.ll..,cc::,..,'.;:,.                
-     co..lKKKkokl.':lloo;''ol..;dl.               
-   .,c;.,xKKKKKKo.':llll;.'oOxl,.cl,.             
-   cNo..lKKKKKKKo'';llll;;okKKKl..oNc             
-   cNo..lKKKKKKKko;':c:,'lKKKKKo'.oNc             
-   cNo..lKKKKKKKKKl.....'dKKKKKxc,l0:             
-   .c:'.lKKKKKKKKKk;....lKKKKKKo'.oNc             
-     ,:.'oxOKKKKKKKOxxxxOKKKKKKxc,;ol:.           
-     ;c..'':oookKKKKKKKKKKKKKKKKKk:.'clc.         
-   ,xl'.,oxo;'';oxOKKKKKKKKKKKKKKKOxxl:::;,.      
-  .dOc..lKKKkoooookKKKKKKKKKKKKKKKKKKKxl,;ol.     
-  cx,';okKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKl..;lc.   
-  co..:dddddddddddddddddddddddddddddddddl::',::.  
-  co...........................................   
-
+cNo........................................;' 
+    </pre>
+    <pre class="frame">
+                .ckx;'........':c.                
+             .,:c:::::oxxocoo::::,',.             
+            .odc'..:lkkoolllllo;..;d,             
+            ;c..:o:..;:..',;'.......;.            
+           ,c..:0Xx::o:.,cllc:,'::,.,c.           
+           ;c;lkXKXXXXl.;lllll;lKXOo;':c.         
+         ,dc.oXXXXXXXXl.,lllll;lXXXXx,c0:         
+         ;Oc.oXXXXXXXXo.':ll:;'oXXXXO;,l'         
+         'l;;kXXXXXXXXd'.'::'..dXXXXO;,l'         
+         'l;:0XXXXXXXX0x:...,:o0XXXXx,:x,         
+         'l;;kXXXXXXXXXKkol;oXXXXXXXO;oNc         
+        ,c'..ckk0XXXXXXXXXX00XXXXXXX0:;o:.        
+      .':;..:do::ooookXXXXXXXXXXXXXXXo..c;        
+    .',',:co0XX0kkkxxOXXXXXXXXXXXXXXXOc..;l.      
+  .:;'..oXXXXXXXXXXXXXXXXXXXXXXXXXXXXXko;';:.     
+.ldc..:oOXKXXXXXXKXXKXXXXXXXXXXXXXXXXXXXo..oc     
+:0o...:dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo,.:,     
+cNo........................................;' 
+    </pre>
+    <pre class="frame">
            .ccccccc.                              
       .,,,;cooolccoo;;,,.                         
      .dOx;..;lllll;..;xOd.                        
@@ -131,8 +120,8 @@ cNo..lXXXXXXXXXOolkXXXXXXXXXkl,..;:';.
   ;c.lOdood:'''oXXXXXXXXXXXXXXXXXXXXXk,..;ol.     
   ';.:xxxxxocccoxxxxxxxxxxxxxxxxxxxxxxl::'.';;.   
   ';........................................;l'   
-
-                                                  
+    </pre>
+    <pre class="frame">
         .;:;;,.,;;::,.                            
      .;':;........'co:.                           
    .clc;'':cllllc::,.':c.                         
@@ -149,9 +138,9 @@ d..':lxkkkkkkkkxxkkkkkkkkkkkdoc;,;'..'.,.
 o...'';llllldkkkkkkkkkkkkkkkkkkdll;..'cdo.        
 o..,l;'''''';dkkkkkkkkkkkkkkkkkkkkdlc,..;lc.      
 o..;lc;;;;;;,,;clllllllllllllllllllllc'..,:c.     
-o..........................................;'     
-
-                                                  
+o..........................................;'
+    </pre>
+    <pre class="frame">
            .,,,,,,,,,.                            
          .ckKxodooxOOdcc.                         
       .cclooc'....';;cool.                        
@@ -168,10 +157,9 @@ cNo..ckkkkkkkkko,.;loc,.ckkkkkc..oc
 kNo..':lllllldkkkkkkkkkkkkkkkkkdcc,.;l.           
 KOc,c;''''''';lldkkkkkkkkkkkkkkkkkc..;lc.         
 xx:':;;;;,.,,...,;;cllllllllllllllc;'.;od,        
-cNo.....................................oc        
-
-                                                  
-                                                  
+cNo.....................................oc   
+    </pre>
+    <pre class="frame">
                    .ccccccc.                      
                .ccckNKOOOOkdcc.                   
             .;;cc:ccccccc:,:c::,,.                
@@ -187,11 +175,9 @@ cNo.....................................oc
    ;Oc..cl'':lldOOOOOOOOdcclxOOOOx,.cd.           
   .:;';lxl''''':lldOOOOOOOOOOOOOOc..oc            
 ,dl,.'cooc:::,....,::coooooooooooc'.c:            
-cNo.................................oc            
-
-                                                  
-                                                  
-                                                  
+cNo.................................oc  
+    </pre>
+    <pre class="frame">
                         .cccccccc.                
                   .,,,;;cc:cccccc:;;,.            
                 .cdxo;..,::cccc::,..;l.           
@@ -206,28 +192,9 @@ cNo.................................oc
      .:,',coxoc;;ccccoxxxxxxxxo:::oxxo,.cdc.      
   .;':;.'oxxxxxc''''';cccoxxxxxxxxxxxc..oc        
 ,do:'..,:llllll:;;;;;;,..,;:lllllllll;..oc        
-cNo.....................................oc        
-
-                                                  
-                                                  
-                              .ccccc.             
-                         .cc;'coooxkl;.           
-                     .:c:::c:,,,,,;c;;,.'.        
-                   .clc,',:,..:xxocc;'..c;        
-                  .c:,';:ox:..:c,,,,,,...cd,      
-                .c:'.,oxxxxl::l:.,loll;..;ol.     
-                ;Oc..:xxxxxxxxx:.,llll,....oc     
-             .,;,',:loxxxxxxxxx:.,llll;.,,.'ld,   
-            .lo;..:xxxxxxxxxxxx:.'cllc,.:l:'cO;   
-           .:;...'cxxxxxxxxxxxxoc;,::,..cdl;;l'   
-         .cl;':,'';oxxxxxxdxxxxxx:....,cooc,cO;   
-     .,,,::;,lxoc:,,:lxxxxxxxxxxxo:,,;lxxl;'oNc   
-   .cdxo;':lxxxxxxc'';cccccoxxxxxxxxxxxxo,.;lc.   
-  .loc'.'lxxxxxxxxocc;''''';ccoxxxxxxxxx:..oc     
-olc,..',:cccccccccccc:;;;;;;;;:ccccccccc,.'c,     
-Ol;......................................;l'      
-
-                                                  
+cNo.....................................oc     
+    </pre>
+    <pre class="frame">
                               ,ddoodd,            
                          .cc' ,ooccoo,'cc.        
                       .ccldo;...',,...;oxdc.      
@@ -245,10 +212,24 @@ Ol;......................................;l'
    .coc,;::ldddddddddddddlcccc:ldddddddddl:,cO;   
 ,xl::,..,cccccccccccccccccccccccccccccccc:;':xx,  
 cNd.........................................;lOc  
-    </div>
+    </pre>
+
   </div>
   <div class="content">
     <p>curl hvgs.github.io/parrot</p>
   </div>
+  <script>
+    // JavaScript to play frames like a video
+    const frames = document.querySelectorAll('.frame');
+    let currentFrameIndex = 0;
+    
+    function showNextFrame() {
+      frames[currentFrameIndex].style.display = 'none';
+      currentFrameIndex = (currentFrameIndex + 1) % frames.length;
+      frames[currentFrameIndex].style.display = 'block';
+    }
+    
+    setInterval(showNextFrame, 100); // Adjust interval for desired playback speed (milliseconds)
+  </script>
 </body>
 </html>
