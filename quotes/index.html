@@ -34,13 +34,17 @@
         }
 
         .file-list li {
-            padding: 10px;
-            margin-bottom: 5px;
+            padding: 20px;
+            margin-bottom: 10px;
             background-color: #2C3446; /* Dark background for items */
             border: 1px solid #185875; /* Midnight blue border */
             border-radius: 5px;
             cursor: pointer;
             transition: all 0.4s ease; /* Smooth transition for hover effect */
+            text-align: center;
+            font-size: 1.2em;
+            position: relative;
+            overflow: hidden;
         }
 
         .file-list li:hover {
@@ -50,25 +54,39 @@
             transform: translate3d(6px, -6px, 0); /* Slight movement effect */
         }
 
+        .file-list li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+            transform: scale(1.1);
+            transition: transform 0.4s ease;
+        }
+
+        .file-list li:hover::before {
+            transform: scale(1.2);
+        }
+
         .file-list a {
             text-decoration: none;
             color: inherit; /* Use inherited color */
-        }
-
-        /* Ensure the hover effect is consistent */
-        .file-list a:hover {
-            color: #FFF842; /* Change text color on hover */
+            display: block;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
     <h1>File Manager</h1>
     <ul id="fileList" class="file-list">
-        <!-- Manually list the files -->
         <li><a href="cpizza.html">Chicken Pizza</a></li>
         <li><a href="fault.html">Fault</a></li>
         <li><a href="gooder.html">Gooder</a></li>
-        <li><a href="him.html"></a>Him</li>
+        <li><a href="him.html">Him</a></li>
         <li><a href="huh.html">Huh</a></li>
         <li><a href="idiot.html">Idiots</a></li>
         <li><a href="no.html">no.</a></li>
