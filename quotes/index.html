@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Manager</title>
+    <style>
+        @charset "UTF-8";
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.42em;
+            color: #A7A1AE;
+            background-color: #1F2739;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 300;
+            line-height: 1em;
+            text-align: center;
+            color: #4DC3FA;
+        }
+
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            width: 80%;
+            display: table;
+        }
+
+        .file-list li {
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #2C3446; /* Dark background for items */
+            border: 1px solid #185875; /* Midnight blue border */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.4s ease; /* Smooth transition for hover effect */
+        }
+
+        .file-list li:hover {
+            background-color: #464A52; /* Darker background on hover */
+            color: #FFF842; /* Change text color on hover */
+            box-shadow: 0 6px 6px -6px #0E1119; /* Shadow effect */
+            transform: translate3d(6px, -6px, 0); /* Slight movement effect */
+        }
+
+        .file-list a {
+            text-decoration: none;
+            color: inherit; /* Use inherited color */
+        }
+
+        /* Ensure the hover effect is consistent */
+        .file-list a:hover {
+            color: #FFF842; /* Change text color on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>File Manager</h1>
+    <ul id="fileList" class="file-list">
+        <!-- Manually list the files -->
+        <li><a href="cpizza.html">Chicken Pizza</a></li>
+        <li><a href="fault.html">Fault</a></li>
+        <li><a href="gooder.html">Gooder</a></li>
+        <li><a href="him.html"></a>Him</li>
+        <li><a href="huh.html">Huh</a></li>
+        <li><a href="idiot.html">Idiots</a></li>
+        <li><a href="no.html">no.</a></li>
+        <li><a href="rizz.html">Rizz</a></li>
+        <li><a href="shut.html">Shut</a></li>
+        <li><a href="sigma.html">Sigma</a></li>
+        <li><a href="sir.html">SIR</a></li>
+        <li><a href="square.html">²</a></li>
+    </ul>
+</body>
+</html>
