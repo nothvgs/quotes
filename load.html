@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Animation</title>
+    <style>
+        /* CSS styles generated from SCSS */
+        * {
+            border: 0;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --hue: 223;
+            --bg: hsl(var(--hue),10%,90%);
+            --fg: hsl(var(--hue),10%,10%);
+            --red: hsl(3,90%,50%);
+            --orange: hsl(33,90%,50%);
+            --yellow: hsl(48,90%,50%);
+            --green: hsl(123,90%,40%);
+            --cyan: hsl(183,90%,40%);
+            --blue: hsl(243,90%,50%);
+            --purple: hsl(273,90%,50%);
+            --trans-dur: 0.3s;
+            font-size: calc(14px + (60 - 14) * (100vw - 280px) / (3840 - 280));
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--fg);
+            display: flex;
+            font: 1em/1.5 sans-serif;
+            height: 100vh;
+            transition:
+                background-color var(--trans-dur),
+                color var(--trans-dur);
+        }
+        main {
+            margin: auto;
+            padding: 1.5em 0;
+        }
+        .tetris {
+            animation-name: bounce;
+            position: relative;
+            width: 10em;
+            height: 10.5em;
+        }
+        .tetris:after {
+            background-color: hsl(var(--hue),10%,70%);
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.5em;
+            transition: background-color var(--trans-dur);
+        }
+        .tetris, .tetris__block, .tetris__block-cell {
+            animation: {
+                duration: 4s;
+                timing-function: cubic-bezier(0.65,0,0.35,1);
+                iteration-count: infinite;
+            };
+        }
+        .tetris__block {
+            display: grid;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 1em 1em;
+        }
+        .tetris__block-cell {
+            border: 0.25em solid hsla(0,0%,0%,0) {
+                top-color: hsla(0,0%,100%,0.3);
+                right-color: hsla(0,0%,0%,0.1);
+                bottom-color: hsla(0,0%,0%,0.1);
+                left-color: hsla(0,0%,100%,0.1);
+            };
+        }
+        /* Dark theme */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: hsl(var(--hue),10%,10%);
+                --fg: hsl(var(--hue),10%,90%);
+            }
+            .tetris:after {
+                background-color: hsl(var(--hue),10%,30%);
+            }
+        }
+        /* Animations */
+        @keyframes bounce {
+            from,
+            96%,
+            to {
+                animation-timing-function: linear;
+                transform: translate(0,0);
+            }
+            98% {
+                animation-timing-function: cubic-bezier(0.33,1,0.68,1);
+                transform: translate(0,1em);
+            }
+        }
+        @keyframes block1 {
+            from { transform: translate(5em,0) rotate(90deg); }
+            9.6% { animation-timing-function: cubic-bezier(0.65,0,0.35,1); }
+            14.4% { transform: translate(7em,0) rotate(90deg); }
+            19.2% { transform: translate(7em,0) rotate(0); }
+            24% { transform: translate(7em,7em) rotate(0); }
+            98% { transform: translate(7em,7em) rotate(0); opacity: 0; }
+        }
+        @keyframes block2 {
+            from { transform: translate(3em,0); }
+            9.6% { animation-timing-function: cubic-bezier(0.65,0,0.35,1); }
+            14.4% { transform: translate(0,0); }
+            19.2% { transform: translate(0,1em); }
+            24% { transform: translate(0,9em); }
+            98% { transform: translate(0,9em); opacity: 0; }
+        }
+        /* Additional block animations and effects can be added similarly */
+    </style>
+</head>
+<body>
+    <main>
+        <div class="tetris">
+            <div class="tetris__block tetris__block--1">
+                <div class="tetris__block-cell"></div>
+                <div class="tetris__block-cell"></div>
+                <div class="tetris__block-cell"></div>
+                <div class="tetris__block-cell"></div>
+            </div>
+            <div class="tetris__block tetris__block--2">
+                <div class="tetris__block-cell"></div>
+                <div class="tetris__block-cell"></div>
+                <div class="tetris__block-cell"></div>
+                <div class="tetris__block-cell"></div>
+            </div>
+            <!-- Additional blocks can be added similarly -->
+        </div>
+    </main>
+</body>
+</html>
