@@ -48,82 +48,6 @@
       position: relative;
     }
 
-    .pops {
-      position: absolute;
-      inset: 0;
-      background: white;
-      mix-blend-mode: darken;
-      filter: brightness(2);
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .pop {
-      height: var(--size, 100%);
-      aspect-ratio: 1;
-      background: radial-gradient(hsl(var(--h) 100% 70%) 25%, transparent 50%);
-      position: absolute;
-      display: inline-block;
-      animation: scale var(--s, 2s) var(--d, 0s) infinite alternate;
-      left: var(--x, 0);
-      top: var(--y, 0);
-      scale: 0;
-      translate: -50% -50%;
-      mix-blend-mode: multiply;
-      filter: blur(2px);
-    }
-
-    .pop:nth-of-type(1) {
-      --x: 10%;
-      --y: 25%;
-      --h: 277;
-      --s2: 6;
-      --d: -0.25s;
-      --s: 6s;
-    }
-
-    .pop:nth-of-type(2) {
-      --x: 50%;
-      --y: 45%;
-      --h: 140;
-      --s2: 5;
-      --d: -0.75s;
-      --s: 5s;
-    }
-
-    .pop:nth-of-type(3) {
-      --x: 65%;
-      --y: 75%;
-      --h: 210;
-      --s2: 3;
-      --d: -0.5s;
-      --s: 3s;
-    }
-
-    .pop:nth-of-type(4) {
-      --x: 85%;
-      --y: 15%;
-      --h: 320;
-      --s2: 5;
-      --d: -1s;
-      --s: 2s;
-    }
-
-    .pop:nth-of-type(5) {
-      --x: 15%;
-      --y: 100%;
-      --h: 40;
-      --s2: 3;
-      --d: -1s;
-      --s: 2s;
-    }
-
-    @keyframes scale {
-      to {
-        scale: var(--s2);
-      }
-    }
-
     iframe {
       position: absolute;
       top: 0;
@@ -134,10 +58,11 @@
       border: none;
     }
 
-    /* Custom broken heart emoji color */
+    /* Custom broken heart emoji with tie-dye effect */
     .custom-heart {
-      color: #6a6bd1; /* Dark blue */
-      background: linear-gradient(135deg, #1b1b4a, #375079, #7e7fdf, #9e83e5); /* Dark blue, baby blue, light purple */
+      color: transparent;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="tieDyeGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" style="stop-color:#1b1b4a;"/><stop offset="50%" style="stop-color:#375079;"/><stop offset="100%" style="stop-color:#7e7fdf;"/></radialGradient></defs><rect width="100" height="100" fill="url(%23tieDyeGradient)"/></svg>');
+      background-size: cover;
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -148,13 +73,6 @@
     <span style='margin-bottom:4%;'>SH</span>
     <span>
       &nbsp;<span class="custom-heart">💔</span>
-      <span class="pops">
-        <span class="pop"></span>
-        <span class="pop"></span>
-        <span class="pop"></span>
-        <span class="pop"></span>
-        <span class="pop"></span>
-      </span>
     </span>
     <span></span>
     <span> ‎ HM</span>
