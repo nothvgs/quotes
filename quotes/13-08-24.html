@@ -51,22 +51,13 @@
       height: 1em;
     }
 
-    /* Tie-dye broken heart */
+    /* Image-based broken heart */
     .heart {
-      position: relative;
       display: inline-block;
       width: 1em;
       height: 1em;
-    }
-
-    .heart::before {
-      content: '💔';
-      font-size: 1em;
-      background: linear-gradient(135deg, #1b1b4a, #375079, #7e7fdf);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
+      background: url('/media/td-heart.png') no-repeat center;
+      background-size: cover;
     }
 
     iframe {
