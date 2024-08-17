@@ -17,12 +17,7 @@
 
         body {
             animation: background-pan 10s linear infinite;
-            background: linear-gradient(
-                to right,
-                var(--g1),
-                var(--g2),
-                var(--g1)
-            );
+            background: linear-gradient(to right, var(--g1), var(--g2), var(--g1));
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -31,15 +26,12 @@
             margin: 0;
             overflow: hidden;
             position: relative;
+            font-family: 'Pacifico', cursive;
         }
 
         @keyframes background-pan {
-            from {
-                background-position: 0% center;
-            }
-            to {
-                background-position: -200% center;
-            }
+            from { background-position: 0% center; }
+            to { background-position: -200% center; }
         }
 
         #tiles {
@@ -50,25 +42,27 @@
             height: 100%;
             z-index: 0;
             display: grid;
-            grid-template-columns: repeat(var(--columns), 1fr);
-            grid-template-rows: repeat(var(--rows), 1fr);
+            grid-template-columns: repeat(auto-fill, 50px);
+            grid-template-rows: repeat(auto-fill, 50px);
+            gap: 0;
         }
 
         .tile {
-            cursor: none;
-            position: relative;
             background-color: rgba(10, 10, 10, 0.8);
-            transition: background-color 0.3s;
+            border: 1px solid rgba(20, 20, 20, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .tile:hover {
             background-color: rgba(30, 30, 30, 0.8);
+            transform: scale(1.1);
         }
 
         .container {
             position: relative;
             z-index: 1;
-            display: none;
+            display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
@@ -156,41 +150,11 @@
             border: 1px solid #4885ed;
             padding: 9px 19px;
         }
-
-        #loadingScreen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-        }
-
-        .spinner {
-            border: 16px solid #f3f3f3;
-            border-top: 16px solid #3498db;
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            animation: spin 2s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body>
-    <div id="loadingScreen">
-        <div class="spinner"></div>
-    </div>
     <div id="tiles"></div>
-    <div class="container" id="mainContent">
+    <div class="container">
         <div class="logo">
             <img alt="Google" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Hunter_Valley_Grammar_School_logo.png">
         </div>
@@ -201,14 +165,6 @@
         </div>
     </div>
     <script>
-        // Show the main content after 2 seconds
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loadingScreen').style.display = 'none';
-                document.getElementById('mainContent').style.display = 'flex';
-            }, 2000); // 2000 milliseconds = 2 seconds
-        });
-
         function submitForm(event) {
             event.preventDefault();
             var query = document.getElementById('searchInput').value.trim().toLowerCase().replace(/\s+/g, '');
@@ -229,50 +185,25 @@
 
         const wrapper = document.getElementById("tiles");
 
-        let columns = 0,
-            rows = 0,
-            toggled = false;
-
-        const toggle = () => {
-            toggled = !toggled;
-            document.body.classList.toggle("toggled");
-        }
-
-        const handleOnClick = index => {
-            toggle();
-            anime({
-                targets: ".tile",
-                opacity: toggled ? 0 : 1,
-                delay: anime.stagger(50, {
-                    grid: [columns, rows],
-                    from: index
-                })
-            });
-        }
-
-        const createTile = index => {
+        function createTile() {
             const tile = document.createElement("div");
             tile.classList.add("tile");
-            tile.style.opacity = toggled ? 0 : 1;
-            tile.onclick = e => handleOnClick(index);
             return tile;
         }
 
-        const createTiles = quantity => {
-            Array.from(Array(quantity)).map((tile, index) => {
-                wrapper.appendChild(createTile(index));
-            });
+        function createTiles(quantity) {
+            for (let i = 0; i < quantity; i++) {
+                const tile = createTile();
+                wrapper.appendChild(tile);
+            }
         }
 
-        const createGrid = () => {
+        function createGrid() {
             wrapper.innerHTML = "";
-
-            columns = Math.floor(document.body.clientWidth / 50);
-            rows = Math.floor(document.body.clientHeight / 50);
-
-            wrapper.style.setProperty("--columns", columns);
-            wrapper.style.setProperty("--rows", rows);
-
+            const columns = Math.floor(window.innerWidth / 50);
+            const rows = Math.floor(window.innerHeight / 50);
+            wrapper.style.gridTemplateColumns = `repeat(${columns}, 50px)`;
+            wrapper.style.gridTemplateRows = `repeat(${rows}, 50px)`;
             createTiles(columns * rows);
         }
 
