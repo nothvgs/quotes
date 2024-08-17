@@ -178,6 +178,16 @@
         </div>
     </div>
     <script>
+
+        function showLoadingScreen() {
+            window.location.href = 'load.html';
+            setTimeout(() => {
+                window.location.href = '/'; // Update with the actual main page URL
+            }, 2000); // 2000 milliseconds = 2 seconds
+        }
+
+        window.onload = showLoadingScreen;
+        
         function submitForm(event) {
             event.preventDefault();
             var query = document.getElementById('searchInput').value.trim().toLowerCase().replace(/\s+/g, '');
